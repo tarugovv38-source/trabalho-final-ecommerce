@@ -4,7 +4,7 @@
 **Curso:** Bacharelado em Sistemas de Informação  
 **Disciplina:** Cloud Computing  
 **Professor:** Prof. Esp. Ademar Perfoll Junior  
-**Aluno:** Vitor Hugo Tavares  
+**Aluno:** (seu nome aqui)  
 **Tema:** Infraestrutura para um Pequeno E-Commerce  
 
 ---
@@ -71,11 +71,12 @@ A API estará disponível em: `http://localhost:5000`
 
 ## Endpoints Disponíveis
 
-| Método | Rota               | Descrição                         |
-|--------|--------------------|-----------------------------------|
-| GET    | `/status`          | Health check da aplicação         |
-| GET    | `/produtos`        | Lista todos os produtos           |
-| GET    | `/produtos/{id}`   | Retorna um produto pelo ID        |
+| Método | Rota                        | Descrição                         |
+|--------|-----------------------------|-----------------------------------|
+| GET    | `/status`                   | Health check da aplicação         |
+| GET    | `/produtos`                 | Lista todos os produtos           |
+| GET    | `/produtos?categoria=Redes` | Filtra produtos por categoria     |
+| GET    | `/produtos/{id}`            | Retorna um produto pelo ID        |
 
 ### Exemplos de uso
 
