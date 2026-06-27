@@ -4,7 +4,7 @@
 **Curso:** Bacharelado em Sistemas de Informação  
 **Disciplina:** Cloud Computing  
 **Professor:** Prof. Esp. Ademar Perfoll Junior  
-**Aluno:** (seu nome aqui)  
+**Aluno:** Vitor Hugo Tavares  
 **Tema:** Infraestrutura para um Pequeno E-Commerce  
 
 ---
