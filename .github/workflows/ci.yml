@@ -1,0 +1,72 @@
+# ============================================================
+# Pipeline de Integração Contínua (CI)
+# Disciplina: Cloud Computing - UNIDAVI
+# Autor: Vitor Hugo Tavares
+#
+# Este workflow é acionado automaticamente a cada push ou
+# pull request na branch main. Ele garante que o código
+# enviado passa por análise de qualidade e testes antes
+# de ser integrado ao projeto.
+# ============================================================
+
+name: CI - API E-Commerce
+
+# Define os eventos que disparam o pipeline
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    # Define o sistema operacional do runner (máquina virtual do GitHub)
+    runs-on: ubuntu-latest
+
+    steps:
+      # ----------------------------------------------------------
+      # Passo 1: Checkout do código
+      # Baixa o conteúdo do repositório para o runner
+      # ----------------------------------------------------------
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      # ----------------------------------------------------------
+      # Passo 2: Configuração do ambiente Python
+      # Instala a versão do Python necessária para executar a API
+      # ----------------------------------------------------------
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ----------------------------------------------------------
+      # Passo 3: Instalação das dependências
+      # Instala Flask, pytest, flake8 e pytest-cov via pip
+      # ----------------------------------------------------------
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r api/requirements.txt
+
+      # ----------------------------------------------------------
+      # Passo 4: Análise estática de código (lint) com flake8
+      # Etapa adicional obrigatória: verifica erros de estilo e
+      # possíveis bugs no código antes de executar os testes.
+      # O parâmetro --max-line-length=100 flexibiliza o limite
+      # padrão de 79 caracteres para melhor legibilidade.
+      # ----------------------------------------------------------
+      - name: Análise de qualidade com flake8
+        run: |
+          flake8 api/app.py --max-line-length=100 --exclude=api/tests
+
+      # ----------------------------------------------------------
+      # Passo 5: Execução dos testes unitários com cobertura
+      # Roda o pytest e gera relatório de cobertura de código.
+      # O parâmetro --cov indica qual módulo monitorar,
+      # e --cov-report=term exibe o resultado no terminal do runner.
+      # ----------------------------------------------------------
+      - name: Executar testes unitários
+        run: |
+          cd api
+          pytest tests/ -v --cov=app --cov-report=term

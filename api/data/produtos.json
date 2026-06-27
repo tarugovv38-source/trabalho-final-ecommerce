@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "nome": "Notebook Lenovo IdeaPad 3",
+    "categoria": "Informática",
+    "preco": 2799.90,
+    "estoque": 15,
+    "disponivel": true,
+    "descricao": "Notebook com processador AMD Ryzen 5, 8GB RAM, SSD 256GB"
+  },
+  {
+    "id": 2,
+    "nome": "Smartphone Samsung Galaxy A54",
+    "categoria": "Celulares",
+    "preco": 1599.00,
+    "estoque": 42,
+    "disponivel": true,
+    "descricao": "Tela 6.4\", 128GB, câmera tripla 50MP"
+  },
+  {
+    "id": 3,
+    "nome": "Fone de Ouvido JBL Tune 510BT",
+    "categoria": "Áudio",
+    "preco": 249.90,
+    "estoque": 0,
+    "disponivel": false,
+    "descricao": "Fone Bluetooth com até 40h de bateria"
+  },
+  {
+    "id": 4,
+    "nome": "Monitor LG 24 Full HD",
+    "categoria": "Informática",
+    "preco": 899.00,
+    "estoque": 8,
+    "disponivel": true,
+    "descricao": "Monitor IPS 24 polegadas, resolução 1920x1080, HDMI"
+  },
+  {
+    "id": 5,
+    "nome": "Teclado Mecânico Redragon Kumara",
+    "categoria": "Periféricos",
+    "preco": 319.90,
+    "estoque": 25,
+    "disponivel": true,
+    "descricao": "Teclado mecânico RGB, switch Red, ABNT2"
+  },
+  {
+    "id": 6,
+    "nome": "Mouse Logitech MX Master 3",
+    "categoria": "Periféricos",
+    "preco": 549.00,
+    "estoque": 12,
+    "disponivel": true,
+    "descricao": "Mouse sem fio ergonômico, 4000 DPI, recarregável"
+  },
+  {
+    "id": 7,
+    "nome": "SSD Kingston 480GB SATA",
+    "categoria": "Armazenamento",
+    "preco": 219.90,
+    "estoque": 30,
+    "disponivel": true,
+    "descricao": "SSD 2.5\" SATA III, leitura 500MB/s"
+  },
+  {
+    "id": 8,
+    "nome": "Câmera IP Intelbras Full HD",
+    "categoria": "Segurança",
+    "preco": 189.00,
+    "estoque": 0,
+    "disponivel": false,
+    "descricao": "Câmera de segurança 1080p, visão noturna, Wi-Fi"
+  },
+  {
+    "id": 9,
+    "nome": "Roteador TP-Link Archer C6",
+    "categoria": "Redes",
+    "preco": 269.90,
+    "estoque": 18,
+    "disponivel": true,
+    "descricao": "Roteador Gigabit Dual Band AC1200, 4 antenas"
+  },
+  {
+    "id": 10,
+    "nome": "Tablet Samsung Galaxy Tab A8",
+    "categoria": "Tablets",
+    "preco": 1199.00,
+    "estoque": 7,
+    "disponivel": true,
+    "descricao": "Tela 10.5\", 64GB, Wi-Fi, Android 12"
+  }
+]
