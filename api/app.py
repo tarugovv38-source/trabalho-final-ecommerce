@@ -1,12 +1,12 @@
 """
 API REST - Infraestrutura para Pequeno E-Commerce
 Disciplina: Cloud Computing - UNIDAVI
-Autor: Vitor Hugo Tavares
+Autor: (seu nome aqui)
 """
 
 import json
 import os
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -37,10 +37,15 @@ def status():
 def listar_produtos():
     """
     Retorna a lista completa de produtos disponíveis no e-commerce.
-    Os dados são carregados do arquivo produtos.json.
+    Aceita o parâmetro opcional ?categoria= para filtrar por categoria.
     """
     try:
         produtos = carregar_produtos()
+        categoria = request.args.get("categoria")
+
+        if categoria:
+            produtos = [p for p in produtos if p["categoria"].lower() == categoria.lower()]
+
         return jsonify({
             "total": len(produtos),
             "produtos": produtos
