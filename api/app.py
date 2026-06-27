@@ -1,7 +1,7 @@
 """
 API REST - Infraestrutura para Pequeno E-Commerce
 Disciplina: Cloud Computing - UNIDAVI
-Autor: (seu nome aqui)
+Autor: Vitor Hugo tavares
 """
 
 import json
