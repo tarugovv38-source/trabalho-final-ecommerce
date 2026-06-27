@@ -91,3 +91,20 @@ def test_produtos_disponiveis_tem_estoque_positivo(cliente):
             assert produto["estoque"] > 0, (
                 f"Produto '{produto['nome']}' está disponível mas tem estoque zero."
             )
+
+# ------------------------------------------------------------------
+# Teste 5: Verifica se GET /status retorna campos obrigatórios
+# ------------------------------------------------------------------
+def test_status_retorna_campos_obrigatorios(cliente):
+    """
+    Verifica se a rota GET /status retorna os campos 'nome', 'versao'
+    e 'status', garantindo que o health check da API está completo.
+    """
+    resposta = cliente.get("/status")
+    dados = resposta.get_json()
+
+    assert resposta.status_code == 200
+    assert "nome" in dados
+    assert "versao" in dados
+    assert "status" in dados
+    assert dados["status"] == "online"
