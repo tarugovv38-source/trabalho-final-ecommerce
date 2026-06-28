@@ -1,7 +1,7 @@
 """
 API REST - Infraestrutura para Pequeno E-Commerce
 Disciplina: Cloud Computing - UNIDAVI
-Autor: Vitor Hugo tavares
+Autor: Vitor Hugo Tavares
 """
 
 import json
@@ -9,6 +9,7 @@ import os
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 # Caminho para o arquivo de dados externo
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "produtos.json")
