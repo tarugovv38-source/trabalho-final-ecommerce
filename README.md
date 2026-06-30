@@ -118,14 +118,27 @@ O pipeline de CI é executado automaticamente a cada `push` na branch `main` via
 
 ---
 
-## Execução com Docker (opcional)
+## Execução com Docker (container)
 
-> Caso queira testar em container futuramente:
+### Pré-requisitos
+- Docker instalado ([https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/))
+
+### 1. Construir a imagem
 
 ```bash
-# Construir imagem
 docker build -t api-ecommerce .
+```
 
-# Executar container
+### 2. Executar o container
+
+```bash
 docker run -p 5000:5000 api-ecommerce
+```
+
+A API estará disponível em: `http://localhost:5000`
+
+### 3. Executar os testes dentro do container
+
+```bash
+docker run --rm api-ecommerce python -m pytest tests/ -v
 ```
