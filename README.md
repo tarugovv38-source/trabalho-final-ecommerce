@@ -24,12 +24,13 @@ trabalho-final-ecommerce/
 │   ├── app.py               # Código principal da API
 │   ├── requirements.txt     # Dependências do projeto
 │   ├── data/
-│   │   └── produtos.json    # Dados simulados (10 produtos)
+│   │   └── produtos.json    # Dados simulados (11 produtos)
 │   └── tests/
 │       └── test_api.py      # Testes unitários (pytest)
 ├── .github/
 │   └── workflows/
 │       └── ci.yml           # Pipeline de CI com GitHub Actions
+├── Dockerfile               # Container Docker da API
 └── README.md
 ```
 
@@ -62,7 +63,7 @@ pip install -r api/requirements.txt
 
 ```bash
 cd api
-python app.py
+python3 app.py
 ```
 
 A API estará disponível em: `http://localhost:5000`
@@ -93,14 +94,14 @@ curl http://localhost:5000/produtos/9999   # Retorna 404
 
 ```bash
 cd api
-pytest tests/ -v
+python3 -m pytest tests/ -v
 ```
 
 Para executar com relatório de cobertura:
 
 ```bash
 cd api
-pytest tests/ -v --cov=app --cov-report=term
+python3 -m pytest tests/ -v --cov=app --cov-report=term
 ```
 
 ---
